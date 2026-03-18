@@ -1,8 +1,39 @@
+cat <<EOF > index.html
 <!DOCTYPE html>
-<html>
-<head><title>Cricket Tracker</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Live Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #121212; color: white; text-align: center; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; }
+        .card { background: #1e1e1e; border-radius: 15px; padding: 20px; margin: 20px 0; border-left: 5px solid #00ff88; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        h1 { color: #00ff88; text-transform: uppercase; letter-spacing: 2px; }
+        .score { font-size: 2.5em; font-weight: bold; margin: 10px 0; }
+        .status { color: #ffcc00; font-style: italic; }
+        .footer { margin-top: 50px; font-size: 0.8em; color: #666; }
+        .btn { background: #00ff88; color: black; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
 <body>
-    <h1>Live Cricket Match Status</h1>
-    <div id="stats">Fetching latest scores...</div>
+    <div class="container">
+        <h1>🏏 Cricket Live Dashboard</h1>
+        <div class="card">
+            <h3>India vs Australia (Final)</h3>
+            <div class="score">IND 342/5 (50.0)</div>
+            <p class="status">India won by 42 runs</p>
+            <button class="btn" onclick="location.reload()">Refresh Score</button>
+        </div>
+        <div class="card" style="border-left-color: #00a2ff;">
+            <h3>Top Performer</h3>
+            <p><strong>Virat Kohli:</strong> 112 (94)</p>
+            <p><strong>Jasprit Bumrah:</strong> 3/28 (10.0)</p>
+        </div>
+        <div class="footer">
+            Deployed via Jenkins & Kubernetes CI/CD Pipeline | Dev: Shubham Sawant
+        </div>
+    </div>
 </body>
 </html>
+EOF
